@@ -5,9 +5,9 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 $capsule = new Capsule;
 
 $capsule->addConnection([
-    'driver'    => 'mysql',
+    'driver'    => 'mysqli',
     'host'      => 'localhost',
-    'database'  => 'boilerplate_slim',
+    'database'  => 'bank-test',
     'username'  => 'root',
     'password'  => '',
     'charset'   => 'utf8',

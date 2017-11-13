@@ -24,7 +24,7 @@ final class HomeController
         $this->logger->info("Home page action dispatched");
 		
         $this->view->render($response, 'hello.twig');
-		
+
         return $response;
     }
 }

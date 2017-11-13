@@ -91,6 +91,21 @@ $container['App\Controllers\UserController'] = function ($c) {
 		$c->get('App\Repositories\UserRepository')
     );
 };
+
+$container['App\Controllers\BankController'] = function ($c) {
+    return new App\Controllers\BankController(
+        $c->get('view'),
+        $c->get('logger'),
+        $c->get('flash')
+    );
+};
+
+$container['App\Controllers\DatabaseController'] = function ($c) {
+    return new App\Controllers\DatabaseController(
+        $c->get('view'),
+        $c->get('logger')
+    );
+};
 # -----------------------------------------------------------------------------
 # Factories Models
 # -----------------------------------------------------------------------------

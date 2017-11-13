@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boilerplate for Slim Framework 3</title>
+    <style>
+        @import url(//fonts.googleapis.com/css?family=Lato:700);
+
+        body {
+            margin:0;
+            font-family:'Lato', sans-serif;
+            text-align:center;
+            color: #999;
+        }
+
+        .welcome {
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -150px;
+            margin-top: -100px;
+        }
+
+        a, a:visited {
+            text-decoration:none;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin: 16px 0 0 0;
+        }
+    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<a href="{{ path_for('homepage') }}">
+    <button>
+        Homepage
+    </button>
+</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Sortcode</th>
+            <th scope="col">Bank account</th>
+            <th scope="col">IP</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for request in requests %}
+            <tr>
+                <th>{{ request.id }}</th>
+                <th>{{ request.short_code }}</th>
+                <th>{{ request.bank_account }}</th>
+                <th>{{ request.ip }}</th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Request ID</th>
+            <th scope="col">Response json</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for response in responses %}
+            <tr>
+                <th>{{ response.id }}</th>
+                <th>{{ response.request_id }}</th>
+                <th>{{ response.reponse_json }}</th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
